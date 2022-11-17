@@ -1,0 +1,16 @@
+{
+	"name": "fe_1",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tailwindcss -i ./css/tailwind.css -o ./build/tailwind.css",
+		"watch": "tailwindcss -i ./css/tailwind.css -o ./build/tailwind.css --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"tailwindcss": "^3.2.4"
+	}
+}
