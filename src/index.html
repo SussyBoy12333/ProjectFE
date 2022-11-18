@@ -58,7 +58,7 @@
 				class="bg-[#5423E7] w-screen flex flex-col items-center justify-between">
 				<nav
 					id="navbar"
-					class="w-screen px-52 py-1 flex flex-row gap-7 items-center justify-between z-50 fixed top-0 bg-[#5423e7] lg:px-10 sm:px-3">
+					class="w-screen px-52 py-1 flex flex-row gap-7 items-center justify-between z-50 fixed top-0 bg-[#5423e7] lg:px-10 sm:px-3 opacity-0 transition-all duration-700">
 					<div class="flex flex-row gap-7 items-center justify-center">
 						<div>
 							<img
@@ -112,17 +112,19 @@
 						<div>
 							<div
 								class="home-header grid grid-cols-2 gap-5 py-[6.5rem] leading-[5.1rem] tracking-tight">
-								<div class="flex-content flex flex-col gap-5 z-[1]">
-									<div class="mb-6">
+								<div
+									class="flex-content flex flex-col gap-5 z-[1]"
+									id="heading-page-section">
+									<div class="mb-6 opacity-0 transition-all duration-700">
 										<h1 class="font-medium text-white text-[5rem] lg:text-2xl sm:text-xl">
 											Payments, tax & subscriptions for software companies
 										</h1>
 									</div>
-									<div class="text-[1.35rem] opacity-[0.65] text-white leading-8 mb-6">
+									<div class="text-[1.35rem] text-white leading-8 mb-6 opacity-0 transition-all duration-700">
 										As your merchant of record, we handle the tax compliance burden so you
 										can focus on more revenue and less headache.
 									</div>
-									<div class="">
+									<div class="opacity-0 transition-all duration-700">
 										<button
 											id="button-get-started-free"
 											class="flex flex-row items-center justify-center bg-white text-xl font-medium rounded-full transition-all relative top-0 left-0 right-0 bottom-0 hover:bg-[#e9ae2f] hover:transition-all hover:duration-300 hover:relative hover:top-[-10px] hover:left-[-10px] duration-300">
@@ -139,7 +141,7 @@
 								</div>
 								<div
 									id="w-node-d621cc28-e0af-c187-1ff6-d218b5d8ece1-3151c08f"
-									class="home-header_image-wrap flex justify-center items-center z-0">
+									class="home-header_image-wrap flex justify-center items-center z-0 opacity-0 transition-all duration-700">
 									<img
 										style="
 											transform: translate3d(0rem, 0rem, 0px) scale3d(2, 2, 2)
