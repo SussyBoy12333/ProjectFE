@@ -97,3 +97,76 @@ for (let index = 0; index < reasons.length; index++) {
 		}
 	});
 }
+
+//intersection observer
+var imgHeadingSection = document.getElementById('w-node-d621cc28-e0af-c187-1ff6-d218b5d8ece1-3151c08f');
+HTMLElement.prototype.addFadeAnimation = function (fadeType) {
+	switch (fadeType) {
+		case 'fade-up':
+			this.classList.add('opacity-100');
+			return;
+		case 'fade-down':
+			return;
+		case 'fade-right':
+			return;
+		case 'fade-left':
+			return;
+		case 'fade-up-right':
+			return;
+		case 'fade-down-right':
+			return;
+		case 'fade-up-left':
+			return;
+		case 'fade-down-left':
+			return;
+		default: //when fadeType is null
+			this.classList.add('opacity-100');
+			return;
+	}
+};
+
+function addFadeAnimationForArrays(arraysOfElements, typeOfFade, seriated) {
+	const observerForArraysOptions = {};
+	const observerForArrays = new IntersectionObserver(function (entries, observer) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				if (seriated) {
+					entry.target.style.transitionDelay = `${125 * arraysOfElements.indexOf(entry.target)}ms`;
+				}
+				if (entry.target instanceof HTMLElement) {
+					entry.target.addFadeAnimation(typeOfFade);
+				}
+			} else {
+				observer.unobserve(entry);
+			}
+		});
+	},
+	observerForArraysOptions);
+	arraysOfElements.forEach((element) => {
+		observerForArrays.observe(element);
+	});
+}
+
+addFadeAnimationForArrays(
+	[...document.getElementById('heading-page-section').children], 'fade-up', true
+);
+
+function addFadeAnimationForUniqueElement(uniqueElements, typeOfFade) {
+	const observerForUniqueElementOptions = {};
+	const observerForUniqueElement = new IntersectionObserver(function (entries, observer) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				if (entry.target instanceof HTMLElement) {
+					entry.target.addFadeAnimation(typeOfFade);
+				}
+			} else {
+				observer.unobserve(entry);
+			}
+		});
+	},
+	observerForUniqueElementOptions);
+	observerForUniqueElement.observe(uniqueElements);
+}
+
+addFadeAnimationForUniqueElement(navbar, null);
+addFadeAnimationForUniqueElement(imgHeadingSection, null)
