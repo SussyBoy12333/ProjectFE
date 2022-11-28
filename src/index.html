@@ -21,36 +21,8 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
 			rel="stylesheet" />
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			#button-get-started-free:hover {
-				box-shadow: 10px 10px #fac041;
-			}
-
-			.header-section > h4 {
-				grid-template-columns: auto 1fr auto;
-			}
-
-			.content-section > .show {
-				max-height: 9999px;
-				transition: all 0.25s;
-			}
-			.content-section > .hide {
-				max-height: 0;
-				overflow: hidden;
-				transition: all 0.25s;
-			}
-			.reason:hover .arrow-reason-span {
-				display: flex;
-				align-items: center;
-				transition: all 3s;
-			}
-		</style>
+		<link rel="stylesheet" href="./index.css" />
+		<script src="script.js" defer></script>
 	</head>
 	<body style="font-family: 'Inter', sans serif; overflow-x: hidden">
 		<div>
@@ -115,16 +87,16 @@
 								<div
 									class="flex-content flex flex-col gap-5 z-[1]"
 									id="heading-page-section">
-									<div class="mb-6 opacity-0 transition-all duration-700">
+									<div class="mb-6 transition-all">
 										<h1 class="font-medium text-white text-[5rem] lg:text-2xl sm:text-xl">
 											Payments, tax & subscriptions for software companies
 										</h1>
 									</div>
-									<div class="text-[1.35rem] text-white leading-8 mb-6 opacity-0 transition-all duration-700">
+									<div class="text-[1.35rem] text-white leading-8 mb-6 transition-all">
 										As your merchant of record, we handle the tax compliance burden so you
 										can focus on more revenue and less headache.
 									</div>
-									<div class="opacity-0 transition-all duration-700">
+									<div class="transition-all">
 										<button
 											id="button-get-started-free"
 											class="flex flex-row items-center justify-center bg-white text-xl font-medium rounded-full transition-all relative top-0 left-0 right-0 bottom-0 hover:bg-[#e9ae2f] hover:transition-all hover:duration-300 hover:relative hover:top-[-10px] hover:left-[-10px] duration-300">
@@ -141,7 +113,7 @@
 								</div>
 								<div
 									id="w-node-d621cc28-e0af-c187-1ff6-d218b5d8ece1-3151c08f"
-									class="home-header_image-wrap flex justify-center items-center z-0 opacity-0 transition-all duration-700">
+									class="home-header_image-wrap flex justify-center items-center z-0 opacity-0 transition-all duration-75">
 									<img
 										style="
 											transform: translate3d(0rem, 0rem, 0px) scale3d(2, 2, 2)
@@ -172,7 +144,9 @@
 					<div class="logo-padding px-52">
 						<div>
 							<div>
-								<div class="logo flex justify-between items-center mb-20 mt-[-3rem]">
+								<div
+									class="logo flex justify-between items-center mb-20 mt-[-3rem]"
+									id="logo-container">
 									<h3 class="text-white uppercase opacity-[0.65] text-lg basis-1/4">
 										TRUSTED BY THOUSANDS OF COMPANIES IN 100+ COUNTRIES
 									</h3>
@@ -207,7 +181,9 @@
 			<section class="reasons">
 				<div class="why-wrapper">
 					<div class="padding-section px-40 lg:px-12 sm:px-7">
-						<div class="padding-section py-40 lg:py-12 sm:py-7">
+						<div
+							class="padding-section py-40 lg:py-12 sm:py-7"
+							id="why-wrapper-content">
 							<div class="py-5 flex justify-start items-start">
 								<h4
 									class="uppercase text-[#7b51fa] font-medium tracking-widest text-[1.05rem]">
@@ -533,7 +509,8 @@
 				<div class="px-44 lg:px-12">
 					<div class="py-40 lg:py-20">
 						<div
-							class="w-full h-full grid grid-cols-2 gap-x-20 lg:flex lg:flex-col lg:items-center">
+							class="w-full h-full grid grid-cols-2 gap-x-20 lg:flex lg:flex-col lg:items-center"
+							id="ecommerce-section-header">
 							<div class="main-content">
 								<h4
 									class="uppercase text-base font-medium tracking-widest text-[#d50b3e] mb-10">
@@ -561,7 +538,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="w-full grid grid-cols-2 overflow-hidden">
+			<section
+				class="w-full grid grid-cols-2 overflow-hidden"
+				id="red-background-images">
 				<div class="bg-[#F53D6B] overflow-hidden pt-10">
 					<img
 						src="https://assets.website-files.com/6347244ba8d63489ba51c08e/63524db975ad4b70c4402f98_ecommerce1.jpg"
@@ -571,7 +550,7 @@
 						style="
 							transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg)
 								rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-							opacity: 1;
+							opacity: 0;
 							transform-style: preserve-3d;
 							position: relative;
 							right: 100%;
@@ -586,7 +565,7 @@
 							https://assets.website-files.com/6347244ba8d63489ba51c08e/63524db975ad4b70c4402f98_ecommerce1.jpg        2400w
 						"
 						alt=""
-						class="service-mockup_image is-ecomm" />
+						class="service-mockup_image is-ecommerce duration-75" />
 				</div>
 				<div class="bg-[#FBB1C4] overflow-hidden pt-10">
 					<img
@@ -597,7 +576,7 @@
 						style="
 							transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg)
 								rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-							opacity: 1;
+							opacity: 0;
 							transform-style: preserve-3d;
 							position: relative;
 							min-width: 200%;
@@ -611,14 +590,15 @@
 							https://assets.website-files.com/6347244ba8d63489ba51c08e/63524ff844284340137caa65_ecommerce2.jpg        2400w
 						"
 						alt=""
-						class="service-mockup_image is-ecomm" />
+						class="service-mockup_image is-ecommerce duration-75" />
 				</div>
 			</section>
 			<section class="w-full bg-gray-100">
 				<div class="padding-page px-40 lg:px-20">
 					<div class="padding-page py-36 lg:py-20">
 						<ul
-							class="grid grid-cols-3 lg:grid lg:grid-cols-2 md:grid md:grid-cols-1">
+							id="e-list-container"
+							class="grid grid-cols-3 lg:grid lg:grid-cols-2 md:grid md:grid-cols-1 opacity-0">
 							<li
 								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
 								<div class="padding-div px-10">
@@ -777,10 +757,11 @@
 					</div>
 				</div>
 			</section>
-			<section class="ecommerce-section w-full bg-white">
+			<section class="marketing-section w-full bg-white">
 				<div class="px-44 lg:px-12">
 					<div class="py-40 lg:py-20">
 						<div
+							id="marketing-content-group"
 							class="w-full h-full grid grid-cols-2 gap-x-20 lg:flex lg:flex-col lg:items-center">
 							<div class="main-content">
 								<h4
@@ -808,7 +789,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="w-full grid grid-cols-2 overflow-hidden">
+			<section
+				class="w-full grid grid-cols-2 overflow-hidden"
+				id="blue-background-images">
 				<div class="bg-[#01acfe] overflow-hidden pt-20">
 					<img
 						src="https://assets.website-files.com/6347244ba8d63489ba51c08e/6352576183f0fcc777245ae7_marketing1.jpg"
@@ -856,6 +839,7 @@
 				<div class="padding-page px-40 lg:px-20">
 					<div class="padding-page py-36 lg:py-20">
 						<ul
+							id="marketing-list"
 							class="grid grid-cols-3 lg:grid lg:grid-cols-2 md:grid md:grid-cols-1">
 							<li
 								class="hover:bg-gray-100 hover:cursor-default bg-white transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
@@ -1015,6 +999,456 @@
 					</div>
 				</div>
 			</section>
+			<section class="reporting-section w-full bg-gray-100">
+				<div class="px-44 lg:px-12">
+					<div class="py-40 lg:py-20">
+						<div
+							class="w-full h-full grid grid-cols-2 gap-x-20 lg:flex lg:flex-col lg:items-center"
+							id="reporting-section-header">
+							<div class="main-content">
+								<h4
+									class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-10">
+									reporting
+								</h4>
+								<div class="content pr-10 lg:pr-0">
+									<p
+										class="text-black text-6xl font-medium lg:text-5xl md:text-4xl sm:text-3xl">
+										Understand your business and customers
+									</p>
+								</div>
+							</div>
+							<div class="second-content flex items-center pl-10 lg:pl-0">
+								<p
+									id="w-node-d3befec0-c7fe-461a-4507-76f3d6dd6de2-3151c08f"
+									data-w-id="d3befec0-c7fe-461a-4507-76f3d6dd6de2"
+									class="section-intro text-[#878787] text-xl leading-9 pt-16 md:text-base">
+									Running a software company requires its own unique set of insights —
+									free trial conversion rates, MRR, churn rate, and more.
+									<strong class="text-black font-medium"
+										>Get to know your customers</strong
+									>
+									so you can understand your business needs, up your marketing and
+									<strong class="text-black font-medium"
+										>take your business to new heights</strong
+									>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="w-full grid grid-cols-2 overflow-hidden"
+				id="green-background-images">
+				<div class="bg-[#2dca73] overflow-hidden pt-32">
+					<img
+						src="https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1.jpg"
+						loading="eager"
+						sizes="(max-width: 479px) 100vw, (max-width: 767px) 62vw, 75vw"
+						data-w-id="7d989fce-d358-9266-57a2-49ff0b6e5675"
+						style="
+							transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg)
+								rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+							opacity: 1;
+							transform-style: preserve-3d;
+							position: relative;
+							right: 35%;
+							min-width: 135%;
+						"
+						srcset="
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1-p-500.jpg   500w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1-p-800.jpg   800w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1-p-1080.jpg 1080w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1-p-1600.jpg 1600w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1-p-2000.jpg 2000w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/6352598c5890a03bbe55ec82_reporting1.jpg        2234w
+						"
+						alt=""
+						class="service-mockup_image is-ipad-mockup" />
+				</div>
+				<div class="bg-[#b1edcb] overflow-hidden pt-32">
+					<img
+						src="https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2.jpg"
+						loading="eager"
+						sizes="(max-width: 479px) 100vw, (max-width: 767px) 62vw, 75vw"
+						data-w-id="ab51bcb3-2baf-f6d2-119b-0310e44b0f39"
+						style="
+							transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg)
+								rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+							opacity: 1;
+							transform-style: preserve-3d;
+							position: relative;
+							min-width: 135%;
+						"
+						srcset="
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2-p-500.jpg   500w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2-p-800.jpg   800w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2-p-1080.jpg 1080w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2-p-1600.jpg 1600w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2-p-2000.jpg 2000w,
+							https://assets.website-files.com/6347244ba8d63489ba51c08e/63525997ba1ade42df128609_reporting2.jpg        2234w
+						"
+						alt=""
+						class="service-mockup_image is-ipad-mockup" />
+				</div>
+			</section>
+			<section class="w-full bg-gray-100">
+				<div class="padding-page px-40 lg:px-20">
+					<div class="padding-page py-36 lg:py-20">
+						<ul
+							id="report-list-container"
+							class="grid grid-cols-3 lg:grid lg:grid-cols-2 md:grid md:grid-cols-1 opacity-0">
+							<li
+								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
+								<div class="padding-div px-10">
+									<div class="padding-div py-10">
+										<div class="heading-id">
+											<h5
+												class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-7">
+												R/1
+											</h5>
+										</div>
+										<div class="main-heading mb-7">
+											<h2 class="text-[2.5rem] font-medium">Understand your revenue</h2>
+										</div>
+										<div class="content">
+											<p class="text-[#878787] text-xl leading-8">
+												Like your business, accurate metrics are serious.
+												<strong class="text-black font-medium"
+													>Lead your business with confidence</strong
+												>. There’s nothing more frustrating than cloudy metrics.
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li
+								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
+								<div class="padding-div px-10">
+									<div class="padding-div py-10">
+										<div class="heading-id">
+											<h5
+												class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-7">
+												R/2
+											</h5>
+										</div>
+										<div class="main-heading mb-7">
+											<h2 class="text-[2.5rem] font-medium">
+												All-in-one revenue reconciliation
+											</h2>
+										</div>
+										<div class="content">
+											<p class="text-[#878787] text-xl leading-8">
+												With Lemon Squeezy, you can
+												<strong class="text-black font-medium"
+													>accept up to 16 payment methods</strong
+												>, including PayPal, all under one roof. We also shoulder the burden
+												of VAT / taxes.
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li
+								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
+								<div class="padding-div px-10">
+									<div class="padding-div py-10">
+										<div class="heading-id">
+											<h5
+												class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-7">
+												R/3
+											</h5>
+										</div>
+										<div class="main-heading mb-7">
+											<h2 class="text-[2.5rem] font-medium">Real-time revenue insights</h2>
+										</div>
+										<div class="content">
+											<p class="text-[#878787] text-xl leading-8">
+												Have peace of mind
+												<strong class="text-black font-medium"
+													>monitoring your most valuable metrics</strong
+												>
+												relating to your business. From MRR, refunds, average order value,
+												and more.
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li
+								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
+								<div class="padding-div px-10">
+									<div class="padding-div py-10">
+										<div class="heading-id">
+											<h5
+												class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-7">
+												R/4
+											</h5>
+										</div>
+										<div class="main-heading mb-7">
+											<h2 class="text-[2.5rem] font-medium">Understand your audience</h2>
+										</div>
+										<div class="content">
+											<p class="text-[#878787] text-xl leading-8">
+												By having your ecommerce and customer data in one central location,
+												you can
+												<strong class="text-black font-medium"
+													>connect with your audience</strong
+												>
+												in a whole new way. Context matters.
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li
+								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
+								<div class="padding-div px-10">
+									<div class="padding-div py-10">
+										<div class="heading-id">
+											<h5
+												class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-7">
+												R/5
+											</h5>
+										</div>
+										<div class="main-heading mb-7">
+											<h2 class="text-[2.5rem] font-medium">Recover lost payments</h2>
+										</div>
+										<div class="content">
+											<p class="text-[#878787] text-xl leading-8">
+												More than just card retries. From abandoned carts to failed payment
+												recovery,
+												<strong class="text-black font-medium"
+													>understand where your leaky buckets are</strong
+												>
+												and how to fix them.
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li
+								class="hover:bg-white hover:cursor-default bg-gray-100 transition-all duration-300 hover:duration-300 hover:transition-all rounded-lg">
+								<div class="padding-div px-10">
+									<div class="padding-div py-10">
+										<div class="heading-id">
+											<h5
+												class="uppercase text-base font-medium tracking-widest text-[#1E874C] mb-7">
+												R/6
+											</h5>
+										</div>
+										<div class="main-heading mb-7">
+											<h2 class="text-[2.5rem] font-medium">Track email performance</h2>
+										</div>
+										<div class="content">
+											<p class="text-[#878787] text-xl leading-8">
+												Frequently communicating with your audience is half the battle.
+												<strong class="text-black font-medium"
+													>Learn how your message is being received</strong
+												>
+												so you can course correct quickly.
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<div class="section-dev bg-white" id="auto-change-theme">
+				<div class="page-padding">
+					<div>
+						<div class="dev-header gap-5 leading-[5.1rem] tracking-tight">
+							<div
+								class="flex-content flex flex-col gap-x-5 z-10"
+								id="heading-page-section">
+								<section
+									class="developers-section w-full bg-white z-50 transition-all duration-500"
+									id="developers-section">
+									<div class="px-44 lg:px-12">
+										<div class="py-40 lg:py-20">
+											<div
+												id="marketing-content-group"
+												class="w-full h-full grid grid-cols-2 gap-x-20 lg:flex lg:flex-col lg:items-center">
+												<div class="main-content">
+													<h4
+														class="uppercase text-base font-medium tracking-widest text-[#cf75ff] mb-10">
+														developers
+													</h4>
+													<div class="content pr-10 lg:pr-0">
+														<h3
+															class="text-black text-6xl font-medium lg:text-5xl md:text-4xl sm:text-3xl">
+															Built for developers, by developers
+														</h3>
+													</div>
+												</div>
+												<div class="second-content flex items-center pl-10 lg:pl-0">
+													<p class="text-[#878787] text-xl leading-9 pt-16 md:text-base">
+														Lemon Squeezy was born out of frustration with existing solutions
+														on the market. As beautiful as it looks,
+														<strong class="text-black font-medium">
+															the platform is just as flexible with you, the developer, in
+															mind.</strong
+														>
+														We spend an unfathomable amount of time making the platform a joy
+														to work with.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section
+									class="d1 w-full bg-white z-50 transition-all duration-500"
+									id="d1">
+									<div class="">
+										<div class="">
+											<div
+												id="marketing-content-group"
+												class="w-full h-full grid grid-cols-2 lg:flex lg:flex-col lg:items-center">
+												<div
+													class="bg-[#cf75ff] flex justify-center overflow-hidden max-h-[600px] pt-20">
+													<img
+														class="feature-layout_image centered"
+														src="https://assets.website-files.com/6347244ba8d63489ba51c08e/634d84e3dfb6e78c2fea9e0d_webhooks.png"
+														width="520"
+														alt=""
+														style="position: relative; min-width: 75%"
+														sizes="(max-width: 991px) 100vw, 50vw"
+														data-w-id="f3631801-1166-0b3a-d7d3-ff9223b43b1d"
+														loading="lazy"
+														srcset="
+															https://assets.website-files.com/6347244ba8d63489ba51c08e/634d84e3dfb6e78c2fea9e0d_webhooks-p-500.png  500w,
+															https://assets.website-files.com/6347244ba8d63489ba51c08e/634d84e3dfb6e78c2fea9e0d_webhooks-p-800.png  800w,
+															https://assets.website-files.com/6347244ba8d63489ba51c08e/634d84e3dfb6e78c2fea9e0d_webhooks.png       1040w
+														" />
+												</div>
+												<div
+													class="second-content px-32 lg:px-0 flex flex-col justify-center">
+													<div>
+														<h4
+															class="block uppercase text-base font-medium tracking-widest text-[#cf75ff] mb-10">
+															D/1
+														</h4>
+													</div>
+													<div class="pr-60">
+														<h3 class="text-black text-4xl font-medium">
+															Powerful, flexible API + Webhooks
+														</h3>
+													</div>
+													<div>
+														<p class="text-[#878787] text-xl leading-9 pt-16 md:text-base">
+															A
+															<strong class="text-black font-medium">full REST API</strong>
+															that has predictable URLs and valid responses, uses standard
+															codes, authentication, and verbs. Plus
+															<strong class="text-black font-medium"
+																>webhooks for asynchronous events.</strong
+															>
+															Voilà.
+														</p>
+													</div>
+													<div class="button-effect">
+														<button
+															class="button-effect-hover px-8 py-3 bg-[#cf75ff] rounded-full mt-10 relative top-0 left-0 right-0 bottom-0 hover:transition-all hover:duration-300 hover:relative hover:top-[-10px] hover:left-[-10px] duration-300"
+															id="button-explore-the-api">
+															<a
+																href=""
+																class="text-white flex flex-row gap-x-5 items-center text-lg"
+																>Explore the API
+																<i
+																	id="explore-the-api-chevron"
+																	class="fa-solid fa-arrow-right relative text-white arrow-reason transition-all left-0"></i>
+															</a>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section
+									class="d2 w-full bg-white z-50 transition-all duration-500"
+									id="d2">
+									<div class="">
+										<div class="">
+											<div
+												id="d2-group"
+												class="w-full h-full grid grid-cols-2 lg:flex lg:flex-col lg:items-center">
+												<div
+													class="second-content px-32 lg:px-0 flex flex-col justify-center">
+													<div>
+														<h4
+															class="block uppercase text-base font-medium tracking-widest text-[#cf75ff] mb-10">
+															D/2
+														</h4>
+													</div>
+													<div class="pr-60">
+														<h3 class="text-black text-4xl font-medium">
+															Documentation so good you’ll cry
+														</h3>
+													</div>
+													<div>
+														<p class="text-[#878787] text-xl leading-9 pt-16 md:text-base">
+															We invest our time into fully abstracting our API so your team
+															can focus on building a cohesive system.
+															<strong class="text-black font-medium"
+																>Integrate with Lemon Squeezy in minutes</strong
+															>, not months.
+														</p>
+													</div>
+													<div class="button-effect">
+														<button
+															class="button-effect-hover px-8 py-3 bg-[#cf75ff] rounded-full mt-10 relative top-0 left-0 right-0 bottom-0 hover:transition-all hover:duration-300 hover:relative hover:top-[-10px] hover:left-[-10px] duration-300"
+															id="button-read-the-docs">
+															<a
+																href=""
+																class="text-white flex flex-row gap-x-5 items-center text-lg"
+																>Read the docs
+																<i
+																	id="read-the-docs-chevron"
+																	class="fa-solid fa-arrow-right relative text-white arrow-reason transition-all left-0"></i>
+															</a>
+														</button>
+													</div>
+												</div>
+												<div
+													class="bg-[#E5B5FE] relative flex justify-end overflow-hidden max-h-[600px] pt-20">
+													<img
+														class="feature-layout_image top-left-padding"
+														src="https://assets.website-files.com/6347244ba8d63489ba51c08e/634d848fea673e8f7a1b698a_docs.png"
+														width="620"
+														alt=""
+														style="
+															transform: translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1)
+																rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+															opacity: 1;
+															transform-style: preserve-3d;
+															position: relative;
+															bottom: 0;
+														"
+														sizes="(max-width: 991px) 100vw, 50vw"
+														data-w-id="003e47a1-93a5-8bb8-113b-885caa8888c2"
+														loading="lazy"
+														srcset="
+															https://assets.website-files.com/6347244ba8d63489ba51c08e/634d848fea673e8f7a1b698a_docs-p-500.png  500w,
+															https://assets.website-files.com/6347244ba8d63489ba51c08e/634d848fea673e8f7a1b698a_docs-p-800.png  800w,
+															https://assets.website-files.com/6347244ba8d63489ba51c08e/634d848fea673e8f7a1b698a_docs.png       1240w
+														" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="opacity-0 fixed top-0 bottom-0 left-0 right-0 transition-all duration-500"
+				id="dark-theme-fixed-container"></div>
 			<!-- chat icon here  -->
 			<div
 				class="fixed right-10 hover:cursor-pointer hover:bg-[#5834c5] bottom-10 z-50 w-fit rounded-full px-5 py-5 shadow-xl text-2xl text-white bg-[#6637f2] leading-none">
@@ -1023,6 +1457,5 @@
 				</div>
 			</div>
 		</div>
-		<script src="script.js"></script>
 	</body>
 </html>
