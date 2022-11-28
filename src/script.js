@@ -2,6 +2,10 @@ var buttonGetStarted = document.getElementById('button-get-started');
 var arrowChevronForward = document.getElementById('arrow-forward');
 var buttonGetStartedFree = document.getElementById('button-get-started-free');
 var arrowChevronForwardFree = document.getElementById('arrow-get-started-free');
+var exploreTheAPIButton = document.getElementById('button-explore-the-api');
+var exploreTheAPIChevron = document.getElementById('explore-the-api-chevron');
+var readTheDocsButton = document.getElementById('button-read-the-docs');
+var readTheDocsChevron = document.getElementById('read-the-docs-chevron');
 const RIGHT_TO_LEFT = 'right->left';
 const LEFT_TO_RIGHT = 'left->right';
 const OLD_POS_LEFT = 'old_pos_left';
@@ -41,6 +45,23 @@ buttonGetStartedFree.addEventListener('mouseover', function () {
 buttonGetStartedFree.addEventListener('mouseleave', function () {
 	arrowChevronForwardFree.arrowChevronMove(OLD_POS_LEFT);
 });
+
+exploreTheAPIButton.addEventListener('mouseenter', function() {
+	exploreTheAPIChevron.arrowChevronMove(LEFT_TO_RIGHT);
+});
+
+exploreTheAPIButton.addEventListener('mouseleave', function () {
+	exploreTheAPIChevron.arrowChevronMove(OLD_POS_LEFT);
+});
+
+readTheDocsButton.addEventListener('mouseenter', function () {
+	readTheDocsChevron.arrowChevronMove(LEFT_TO_RIGHT);
+});
+
+readTheDocsButton.addEventListener('mouseleave', function () {
+	readTheDocsChevron.arrowChevronMove(OLD_POS_LEFT);
+});
+
 
 //scroll handler
 var lastScrollTop = 0;
@@ -99,45 +120,32 @@ for (let index = 0; index < reasons.length; index++) {
 }
 
 //intersection observer
-var imgHeadingSection = document.getElementById('w-node-d621cc28-e0af-c187-1ff6-d218b5d8ece1-3151c08f');
-HTMLElement.prototype.addFadeAnimation = function (fadeType) {
-	switch (fadeType) {
-		case 'fade-up':
-			this.classList.add('opacity-100');
-			return;
-		case 'fade-down':
-			return;
-		case 'fade-right':
-			return;
-		case 'fade-left':
-			return;
-		case 'fade-up-right':
-			return;
-		case 'fade-down-right':
-			return;
-		case 'fade-up-left':
-			return;
-		case 'fade-down-left':
-			return;
-		default: //when fadeType is null
-			this.classList.add('opacity-100');
-			return;
+const FADE_UP = 'fade-up';
+const FADE_DOWN = 'fade-down';
+const FADE_LEFT = 'fade-left';
+const FADE_RIGHT = 'fade-right';
+const FADE_UP_LEFT = 'fade-up-left';
+const FADE_UP_RIGHT = 'fade-up-right';
+const FADE_DOWN_LEFT = 'fade-down-left';
+const FADE_DOWN_RIGHT = 'fade-down-left';
+
+HTMLElement.prototype.addFadeAnimation = function (fadeType, duration) {
+	if (fadeType !== null && fadeType !== undefined) {
+		this.classList.add(fadeType);
+		this.style.animationDuration = `${duration < 0 ? 600 : duration}ms`;
+	} else {
+		this.classList.add('opacity-100');
 	}
 };
 
-function addFadeAnimationForArrays(arraysOfElements, typeOfFade, seriated) {
+function addFadeAnimationForArrays(arraysOfElements, typeOfFade, seriated, interval, duration) {
 	const observerForArraysOptions = {};
-	const observerForArrays = new IntersectionObserver(function (entries, observer) {
+	const observerForArrays = new IntersectionObserver(function (entries,observer) {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
-				if (seriated) {
-					entry.target.style.transitionDelay = `${125 * arraysOfElements.indexOf(entry.target)}ms`;
-				}
-				if (entry.target instanceof HTMLElement) {
-					entry.target.addFadeAnimation(typeOfFade);
-				}
-			} else {
-				observer.unobserve(entry);
+				if (seriated) entry.target.style.animationDelay = `${interval * arraysOfElements.indexOf(entry.target)}ms`;
+				if (entry.target instanceof HTMLElement) entry.target.addFadeAnimation(typeOfFade, duration);
+				observer.unobserve(entry.target);
 			}
 		});
 	},
@@ -145,28 +153,148 @@ function addFadeAnimationForArrays(arraysOfElements, typeOfFade, seriated) {
 	arraysOfElements.forEach((element) => {
 		observerForArrays.observe(element);
 	});
-}
+};
 
-addFadeAnimationForArrays(
-	[...document.getElementById('heading-page-section').children], 'fade-up', true
-);
 
-function addFadeAnimationForUniqueElement(uniqueElements, typeOfFade) {
+function addFadeAnimationForUniqueElement(uniqueElements, typeOfFade, duration) {
 	const observerForUniqueElementOptions = {};
 	const observerForUniqueElement = new IntersectionObserver(function (entries, observer) {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
-				if (entry.target instanceof HTMLElement) {
-					entry.target.addFadeAnimation(typeOfFade);
-				}
-			} else {
-				observer.unobserve(entry);
+				if (entry.target instanceof HTMLElement) entry.target.addFadeAnimation(typeOfFade, duration);
+				observer.unobserve(entry.target);
 			}
 		});
 	},
 	observerForUniqueElementOptions);
 	observerForUniqueElement.observe(uniqueElements);
-}
+};
+var imgHeadingSection = document.getElementById('w-node-d621cc28-e0af-c187-1ff6-d218b5d8ece1-3151c08f');
+var E_listContainer = document.getElementById('e-list-container');
+var redBackgroundImages = document.getElementById('red-background-images');
+var marketingContentGroup = document.getElementById('marketing-content-group');
+var blueBackgroundImages = document.getElementById('blue-background-images');
+var marketingList = document.getElementById('marketing-list');
+var reportSectionHeader = document.getElementById('reporting-section-header');
+var greenBackgroundImages = document.getElementById('green-background-images');
+var reportList = document.getElementById('report-list-container');
 
-addFadeAnimationForUniqueElement(navbar, null);
-addFadeAnimationForUniqueElement(imgHeadingSection, null)
+;(function () {
+	addFadeAnimationForArrays(
+		[...document.getElementById('heading-page-section').children],
+		FADE_UP,
+		true,
+		200,
+		1000,
+	);
+
+	addFadeAnimationForArrays(
+		[...document.getElementById('logo-container').children],
+		FADE_UP,
+		true,
+		380,
+		1000,
+	);
+
+	addFadeAnimationForArrays(
+		[...document.getElementById('why-wrapper-content').children],
+		FADE_UP,
+		false,
+		0,
+		1000,
+	);
+
+	addFadeAnimationForArrays(
+		[...document.getElementById('ecommerce-section-header').children],
+		FADE_UP,
+		false,
+		0,
+		600,
+	);
+
+	var children = [...marketingContentGroup.children][0].children;
+	addFadeAnimationForArrays([...children], FADE_UP, true, 500, 700);
+
+	var lastChild = [...marketingContentGroup.children][1].children;
+	
+	addFadeAnimationForArrays([...lastChild], FADE_UP, true, 2000, 2000);
+
+	addFadeAnimationForArrays(
+		[...reportSectionHeader.children],
+		FADE_UP,
+		true,
+		400, 
+		650
+	)
+})();
+
+;(function () {
+	addFadeAnimationForUniqueElement(navbar, null, 1000);
+	addFadeAnimationForUniqueElement(imgHeadingSection, FADE_UP_LEFT, 600);
+	addFadeAnimationForUniqueElement(E_listContainer, FADE_UP, 700);
+	addFadeAnimationForUniqueElement(marketingList, FADE_UP, 700);
+	addFadeAnimationForUniqueElement(reportList, FADE_UP, 700);
+
+	[...redBackgroundImages.children].forEach((imgContainer) => {
+		addFadeAnimationForUniqueElement(imgContainer.children[0], FADE_UP, 700);
+	});
+	[...blueBackgroundImages.children].forEach((imgContainer) => {
+		addFadeAnimationForUniqueElement(imgContainer.children[0], FADE_UP, 700);
+	});
+	var greenBgImgs = [...greenBackgroundImages.children];
+	greenBgImgs.forEach(greenBgImg => {
+		addFadeAnimationForUniqueElement(greenBgImg.children[0], FADE_UP, 700);
+	})
+})();
+var pass = true;
+var autoChangeTheme = document.getElementById('auto-change-theme');
+var darkTheme = document.getElementById('dark-theme-fixed-container');
+var developerSection = document.getElementById('developers-section');
+var h3Elements = autoChangeTheme.getElementsByTagName('h3');
+var strongElements = autoChangeTheme.getElementsByTagName('strong');
+var d1 = document.getElementById('d1');
+var d2 = document.getElementById('d2');
+
+const changeThemeConfiguration = {
+	rootMargin: `-${window.screen.availHeight * 0.4}px`,
+}
+var isDark = false;
+const changeThemeObserver = new IntersectionObserver(function(entries, observer) {
+	entries.forEach(entry => {
+		if (entry.intersectionRatio > 0) {
+			isDark = true;
+			darkTheme.classList.contains('no-active') ? darkTheme.classList.remove('no-active')	: pass;
+			darkTheme.classList.add('active-dark-theme');
+			if (isDark) {
+				autoChangeTheme.style.backgroundColor = 'black';
+				developerSection.style.backgroundColor = 'black';
+				d1.style.backgroundColor = 'black';
+				d2.style.backgroundColor = 'black';
+				for (let h3Element of h3Elements) {
+					h3Element.style.color = 'white';
+				}
+				for (let strongElement of strongElements) {
+					strongElement.style.color = 'white';
+				}
+			}
+		} else {
+			isDark = false;
+			darkTheme.classList.contains('active-dark-theme') ? darkTheme.classList.remove('active-dark-theme') : pass;
+			darkTheme.classList.add('no-active');
+			if (!isDark) {
+				autoChangeTheme.style.backgroundColor = 'white';
+				developerSection.style.backgroundColor = 'white';
+				d1.style.backgroundColor = 'white';
+				d2.style.backgroundColor = 'white';
+				for (let h3Element of h3Elements) {
+					h3Element.style.color = 'black';
+				}
+				for (let strongElement of strongElements) {
+					strongElement.style.color = 'black';
+				}
+			}
+		}
+	})
+}, changeThemeConfiguration);
+
+changeThemeObserver.observe(autoChangeTheme);
